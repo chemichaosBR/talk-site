@@ -8,29 +8,35 @@
 
 body {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #e5f5ff;
   font-family: 'Roboto Flex', sans-serif;
+  padding: 15px; /* margem lateral em telas pequenas */
 }
 
 main {
-  background:#ffffff;
-  padding: 30px;
+  background: #ffffff;
+  padding: 20px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.05);
+  width: 100%;
+  max-width: 500px; /* limita em desktops */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 1.5rem;
 }
 
 fieldset {
   padding: 15px;
   border-radius: 10px;
+  border: 1px solid #ddd;
 }
 
 .ocorrencia {
@@ -39,19 +45,20 @@ fieldset {
 
 label {
   font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
 }
 
-input, select {
-  height: 25px;
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 
 #motivo {
-  width: 100%;
-  height: 100px;
-}
-
-input {
-  padding-left: 5px;
+  min-height: 100px;
 }
 
 .data-hora {
@@ -62,11 +69,13 @@ input {
 button {
   background: #9ad8ff;
   margin-top: 20px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 20px;
   border: none;
   box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.05);
   cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
 }
 
 button:hover {
@@ -74,7 +83,31 @@ button:hover {
 }
 
 textarea {
- padding: 10px;
- font-family: 'Roboto Flex', sans-serif;
- resize: none;
+  padding: 10px;
+  font-family: 'Roboto Flex', sans-serif;
+  resize: none;
+}
+
+footer a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  main {
+    padding: 15px;
+    border-radius: 15px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
 }
